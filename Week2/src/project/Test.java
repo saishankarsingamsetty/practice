@@ -115,6 +115,7 @@ public class Test {
 				bank.repayLoan(accountNumber,repayAmt);
 				break;
 			case 13:
+				bank.serializeObjects();
 				scn.close();
 				return;
 				

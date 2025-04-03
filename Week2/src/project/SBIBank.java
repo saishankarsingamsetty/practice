@@ -1,45 +1,66 @@
 package project;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class SBIBank implements Bank {
 	
 	SBIBank(){
-		accounts.put(99,new Account(99,"abc",100.0,new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8"))));
-		accounts.put(100,new Account(100,"shankar",100.0,new ArrayList<String>()));
-		accounts.put(101, new Account(101, "John Doe", 5000.0, new ArrayList<String>()));
-		accounts.put(102, new Account(102, "Alice Smith", 7500.0, new ArrayList<String>()));
-		accounts.put(103, new Account(103, "Bob Johnson", 12000.0, new ArrayList<String>()));
-		accounts.put(104, new Account(104, "Emily Davis", 3000.0, new ArrayList<String>()));
-		accounts.put(105, new Account(105, "Michael Brown", 8900.0, new ArrayList<String>()));
-		accounts.put(106, new Account(106, "Sophia Wilson", 15000.0, new ArrayList<String>()));
-		accounts.put(107, new Account(107, "David Lee", 6400.0, new ArrayList<String>()));
-		accounts.put(108, new Account(108, "Olivia Taylor", 9200.0, new ArrayList<String>()));
-		accounts.put(109, new Account(109, "James Anderson", 4100.0, new ArrayList<String>()));
-		accounts.put(110, new Account(110, "Emma Martinez", 7300.0, new ArrayList<String>()));
-		accounts.put(111, new Account(111, "William Harris", 6200.0, new ArrayList<String>()));
-		accounts.put(112, new Account(112, "Charlotte White", 13400.0, new ArrayList<String>()));
-		accounts.put(113, new Account(113, "Daniel Clark", 5700.0, new ArrayList<String>()));
-		accounts.put(114, new Account(114, "Ava Lewis", 8100.0, new ArrayList<String>()));
-		accounts.put(115, new Account(115, "Matthew Hall", 2900.0, new ArrayList<String>()));
-		accounts.put(116, new Account(116, "Isabella Allen", 10500.0, new ArrayList<String>()));
-		accounts.put(117, new Account(117, "Ethan Young", 6800.0, new ArrayList<String>()));
-		accounts.put(118, new Account(118, "Mia Scott", 7200.0, new ArrayList<String>()));
-		accounts.put(119, new Account(119, "Alexander Green", 9400.0, new ArrayList<String>()));
-		accounts.put(120, new Account(120, "Harper Adams", 8600.0, new ArrayList<String>()));
-		accounts.put(121, new Account(121, "Benjamin Nelson", 4200.0, new ArrayList<String>()));
-		accounts.put(122, new Account(122, "Amelia Carter", 5600.0, new ArrayList<String>()));
-		accounts.put(123, new Account(123, "Lucas Baker", 11000.0, new ArrayList<String>()));
-		accounts.put(124, new Account(124, "Ella Gonzalez", 7500.0, new ArrayList<String>()));
-		accounts.put(125, new Account(125, "Henry Perez", 9900.0, new ArrayList<String>()));
-		accounts.put(126, new Account(126, "Sofia Thompson", 5300.0, new ArrayList<String>()));
-		accounts.put(127, new Account(127, "Jack Rivera", 8800.0, new ArrayList<String>()));
-		accounts.put(128, new Account(128, "Lily Torres", 4700.0, new ArrayList<String>()));
-		accounts.put(129, new Account(129, "Mason Ramirez", 7600.0, new ArrayList<String>()));
-		accounts.put(130, new Account(130, "Zoe Peterson", 6800.0, new ArrayList<String>()));
+//		accounts.put(99,new Account(99,"abc",100.0,new ArrayList<String>(Arrays.asList("1","2","3","4","5","6","7","8"))));
+//		accounts.put(100,new Account(100,"shankar",100.0,new ArrayList<String>()));
+//		accounts.put(101, new Account(101, "John Doe", 5000.0, new ArrayList<String>()));
+//		accounts.put(102, new Account(102, "Alice Smith", 7500.0, new ArrayList<String>()));
+//		accounts.put(103, new Account(103, "Bob Johnson", 12000.0, new ArrayList<String>()));
+//		accounts.put(104, new Account(104, "Emily Davis", 3000.0, new ArrayList<String>()));
+//		accounts.put(105, new Account(105, "Michael Brown", 8900.0, new ArrayList<String>()));
+//		accounts.put(106, new Account(106, "Sophia Wilson", 15000.0, new ArrayList<String>()));
+//		accounts.put(107, new Account(107, "David Lee", 6400.0, new ArrayList<String>()));
+//		accounts.put(108, new Account(108, "Olivia Taylor", 9200.0, new ArrayList<String>()));
+//		accounts.put(109, new Account(109, "James Anderson", 4100.0, new ArrayList<String>()));
+//		accounts.put(110, new Account(110, "Emma Martinez", 7300.0, new ArrayList<String>()));
+//		accounts.put(111, new Account(111, "William Harris", 6200.0, new ArrayList<String>()));
+//		accounts.put(112, new Account(112, "Charlotte White", 13400.0, new ArrayList<String>()));
+//		accounts.put(113, new Account(113, "Daniel Clark", 5700.0, new ArrayList<String>()));
+//		accounts.put(114, new Account(114, "Ava Lewis", 8100.0, new ArrayList<String>()));
+//		accounts.put(115, new Account(115, "Matthew Hall", 2900.0, new ArrayList<String>()));
+//		accounts.put(116, new Account(116, "Isabella Allen", 10500.0, new ArrayList<String>()));
+//		accounts.put(117, new Account(117, "Ethan Young", 6800.0, new ArrayList<String>()));
+//		accounts.put(118, new Account(118, "Mia Scott", 7200.0, new ArrayList<String>()));
+//		accounts.put(119, new Account(119, "Alexander Green", 9400.0, new ArrayList<String>()));
+//		accounts.put(120, new Account(120, "Harper Adams", 8600.0, new ArrayList<String>()));
+//		accounts.put(121, new Account(121, "Benjamin Nelson", 4200.0, new ArrayList<String>()));
+//		accounts.put(122, new Account(122, "Amelia Carter", 5600.0, new ArrayList<String>()));
+//		accounts.put(123, new Account(123, "Lucas Baker", 11000.0, new ArrayList<String>()));
+//		accounts.put(124, new Account(124, "Ella Gonzalez", 7500.0, new ArrayList<String>()));
+//		accounts.put(125, new Account(125, "Henry Perez", 9900.0, new ArrayList<String>()));
+//		accounts.put(126, new Account(126, "Sofia Thompson", 5300.0, new ArrayList<String>()));
+//		accounts.put(127, new Account(127, "Jack Rivera", 8800.0, new ArrayList<String>()));
+//		accounts.put(128, new Account(128, "Lily Torres", 4700.0, new ArrayList<String>()));
+//		accounts.put(129, new Account(129, "Mason Ramirez", 7600.0, new ArrayList<String>()));
+//		accounts.put(130, new Account(130, "Zoe Peterson", 6800.0, new ArrayList<String>()));
+		
+		try {
+			
+			ObjectInputStream ois=new ObjectInputStream(new FileInputStream("src/project/Accounts.ser"));
+			HashMap<Integer,Account> collection = (HashMap<Integer,Account>)ois.readObject();
+			accounts=collection;
+			SBIBank.initialNumber=(Integer)ois.readObject();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+//		System.out.println(accounts.size());
+		
+		
 	}
+	
 
 	HashMap<Integer,Account> accounts=new HashMap<>();
 	private static int initialNumber=131;
@@ -238,6 +259,22 @@ public class SBIBank implements Bank {
 		else {
 			System.out.println("account not found");
 		}
+	}
+	
+	public void serializeObjects() {
+		try {
+			ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("src/project/Accounts.ser"));
+			oos.writeObject(accounts);
+			oos.writeObject(Integer.valueOf(initialNumber));
+//			System.out.println("written successfully");
+			oos.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+//		System.out.println(accounts.size());
 	}
 
 }

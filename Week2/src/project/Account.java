@@ -1,8 +1,9 @@
 package project;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Account {
+public class Account implements Serializable {
 	private final int  accNum;
 	private String holderName;
 	private double balance;
