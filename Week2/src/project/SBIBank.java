@@ -207,7 +207,12 @@ public class SBIBank implements Bank {
 	
 	//display all accounts in the bank
 	public void displayAccounts() {
-		System.out.println(accounts);
+		System.out.println("{");
+		for(Integer a:accounts.keySet()) {
+			System.out.println(accounts.get(a));
+			System.out.println();
+		}
+		System.out.println("}");
 	}
 	
 	//taking a loan

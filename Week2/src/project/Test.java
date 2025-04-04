@@ -7,7 +7,8 @@ public class Test {
 		Scanner scn=new Scanner(System.in);
 		SBIBank bank=new SBIBank();
 		while(true) {
-			
+			System.out.println();
+			System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 			System.out.println("\n Welcome to the SBIBank: ");
 			System.out.println("\n1.add account");
 			System.out.println("2.deposit amount");
