@@ -106,7 +106,6 @@ public class Test {
 				
 				bank.applyLoan(accountNumber,loanAmt);
 				break;
-				
 			case 12:
 				System.out.println("Enter account number");
 				accountNumber = scn.nextInt();
