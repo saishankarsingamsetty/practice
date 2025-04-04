@@ -145,6 +145,7 @@ public class SBIBank implements Bank {
 		}
 	}
 	
+	//closing the account
 	public void closeAccount(int accountNum) {
 		if(accounts.containsKey(accountNum)) {
 			accounts.remove(accountNum);
