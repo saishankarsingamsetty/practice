@@ -261,6 +261,7 @@ public class SBIBank implements Bank {
 		}
 	}
 	
+	//serializing the objects before shutdown
 	public void serializeObjects() {
 		try {
 			ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("src/project/Accounts.ser"));
