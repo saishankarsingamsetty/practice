@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class SBIBank implements Bank {
@@ -202,8 +203,6 @@ public class SBIBank implements Bank {
 		else {
 			System.out.println("account not found");
 		}
-		
-		
 	}
 	
 	//display all accounts in the bank

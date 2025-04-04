@@ -1,12 +1,14 @@
 package project;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 
 public class Account implements Serializable {
 	private final int  accNum;
 	private String holderName;
-	private double balance;
+	private BigDecimal balance;
 	private ArrayList<String> transactionHistory;
 	private double loanAmount;
 	
@@ -21,7 +23,7 @@ public class Account implements Serializable {
 	Account(int accNum,String holderName,double balance,ArrayList<String> transactionHistory){
 		this.accNum=accNum;
 		this.holderName=holderName;
-		this.balance=balance;
+		this.balance=BigDecimal.valueOf(balance).setScale(2, RoundingMode.HALF_UP);
 		this.transactionHistory=transactionHistory;
 	}
 	
@@ -46,10 +48,10 @@ public class Account implements Serializable {
 	}
 	
 	public double getBalance() {
-		return balance;
+		return balance.doubleValue();
 	}
 	public void setBalance(double balance) {
-		this.balance = balance;
+		this.balance = BigDecimal.valueOf(balance).setScale(2, RoundingMode.HALF_UP);
 	}
 	
 	public ArrayList<String> getTransactionHistory() {
