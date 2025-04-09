@@ -22,9 +22,12 @@ public class ReadingImageFromDb {
 				int id=rs.getInt(1);
 				InputStream in=rs.getBinaryStream(2);
 				int bytes;
-				
+				int count=0;
 				while((bytes=in.read())!=-1) {
 					out.write(bytes);
+					if(count++==100) {
+						con.close();
+					}
 				}
 				System.out.println("success");
 			}
