@@ -9,7 +9,8 @@ public class ScrollableResultSet {
 
 	public static void main(String[] args) {
 		try(Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orclpdb","hr","hr");
-				PreparedStatement pstmt = con.prepareStatement("select first_name,last_name from employees order by first_name", ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)){
+				PreparedStatement pstmt = con.prepareStatement("select first_name,last_name from employees order by first_name",
+																ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)){
 			
 			ResultSet rs=pstmt.executeQuery();
 //			rs.next();
@@ -23,7 +24,7 @@ public class ScrollableResultSet {
 //			rs.updateRow();
 			System.out.println(rs.getString("first_name"));
 			
-			
+		
 		}
 		catch(Exception e) {
 			e.printStackTrace();
