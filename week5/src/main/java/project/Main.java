@@ -26,7 +26,8 @@ public class Main {
 				if(travels.validateUser(userId, pwd)) {
 					innerLoop:while(true) {
 						
-						System.out.println("Welcome to the bus booking system\n\n");
+						System.out.println("\nWelcome to the bus booking system\n\n");
+						System.out.println("----------------------------------------");
 						System.out.println(
 								"1. View Available Buses\n"+
 										"2. Book a Ticket\n"+
@@ -126,10 +127,10 @@ public class Main {
 			case 3:
 				System.out.println("......");
 				scn.close();
+				travels.close();
 				break outerloop;
 				
 			default:
-				travels.close();
 				System.out.println("enter a valid option ");
 				break;
 				
