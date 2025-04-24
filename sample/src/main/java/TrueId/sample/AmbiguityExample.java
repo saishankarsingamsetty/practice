@@ -1,5 +1,7 @@
 package TrueId.sample;
 
+import java.time.LocalDate;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,5 +16,8 @@ public class AmbiguityExample {
 		example.makeAnimalSound();
 		
 		((AbstractApplicationContext) context).close();
+		
+		System.out.println(example.date);
+		
 	}
 }
