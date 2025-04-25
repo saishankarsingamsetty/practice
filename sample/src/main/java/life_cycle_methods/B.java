@@ -2,9 +2,11 @@ package life_cycle_methods;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("b")
+@Scope("prototype")
 public class B implements InitializingBean, DisposableBean{
 	B(){
 		System.out.println("B class constructor");

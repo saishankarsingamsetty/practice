@@ -6,8 +6,6 @@
 
 
 
-<context:component-scan base-package="life_cycle_methods"/>
+<context:component-scan base-package="lookupinjection"/>
 
-<bean id="a" class="life_cycle_methods.A" init-method="init" destroy-method="destroy" scope="prototype"></bean>
-<bean id="d" class="life_cycle_methods.D" init-method="init1" destroy-method="destroy1"></bean>
 </beans>
