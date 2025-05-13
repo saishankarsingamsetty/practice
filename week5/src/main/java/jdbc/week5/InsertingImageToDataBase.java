@@ -9,7 +9,7 @@ public class InsertingImageToDataBase {
 
 	public static void main(String[] args) {
 		try(Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orclpdb","hr","hr");
-				PreparedStatement pstmt=con.prepareStatement("insert into images values(?,?)");
+				PreparedStatement pstmt=con.prepareStatement("insert into imagesx values(?,?)");
 			){
 			
 			pstmt.setInt(1, 10);

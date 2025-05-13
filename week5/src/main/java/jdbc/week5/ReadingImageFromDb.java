@@ -14,7 +14,7 @@ public class ReadingImageFromDb {
 		
 		try(Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/orclpdb","hr","hr");
 				PreparedStatement pstmt=con.prepareStatement(query);
-				FileOutputStream out=new FileOutputStream("src/main/java/output.jpg");
+				FileOutputStream out=new FileOutputStream("D:\\abc\\output.jpg");
 			){
 			
 			ResultSet rs=pstmt.executeQuery();
@@ -25,7 +25,7 @@ public class ReadingImageFromDb {
 				int count=0;
 				while((bytes=in.read())!=-1) {
 					out.write(bytes);
-					if(count++==100) {
+					if(count++==10) {
 						con.close();
 					}
 				}
