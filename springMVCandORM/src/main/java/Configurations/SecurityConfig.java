@@ -9,23 +9,23 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		.withUser("user").password("{noop}user").roles("user")
-		.and()
-		.withUser("admin").password("{noop}admin").roles("user","admin");
-	}
-	
-	 @Override
-	protected void configure(HttpSecurity http) throws Exception {
-
-		 http.authorizeRequests()
-		 .antMatchers("/").permitAll()
-		 .antMatchers("/user").hasAnyRole("user","admin")
-		 .antMatchers("/admin").hasRole("admin")
-		 .and().formLogin()
-		 .and().exceptionHandling().accessDeniedPage("/accessdenied");
-	}
+//	@Override
+//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.inMemoryAuthentication()
+//		.withUser("user").password("{noop}user").roles("user")
+//		.and()
+//		.withUser("admin").password("{noop}admin").roles("user","admin");
+//	}
+//	
+//	 @Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//
+//		 http.authorizeRequests()
+//		 .antMatchers("/").permitAll()
+//		 .antMatchers("/user").hasAnyRole("user","admin")
+//		 .antMatchers("/admin").hasRole("admin")
+//		 .and().formLogin()
+//		 .and().exceptionHandling().accessDeniedPage("/accessdenied");
+//	}
 	 
 }
