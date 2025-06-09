@@ -45,7 +45,7 @@ public class CustomArrayList<T> {
 		return insertPointer == 0;
 	}
 
-	// contains menthod
+	// contains method
 	public boolean contains(T t) {
 		for (int i = 0; i < insertPointer; i++) {
 			if (t.equals(data[i])) {
@@ -69,6 +69,7 @@ public class CustomArrayList<T> {
 	@SuppressWarnings("unchecked")
 	public void clear() {
 		data = (T[]) new Object[5];
+		insertPointer=0;
 	}
 
 	// for printing the list;
@@ -128,6 +129,5 @@ public class CustomArrayList<T> {
 
 		insertPointer = data.length;
 		data = t;
-
 	}
 }

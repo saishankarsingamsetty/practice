@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component("myBean")
 public class MyBean implements ApplicationContextAware
 {
+	@Autowired
 	private ApplicationContext cxt;
 	
 

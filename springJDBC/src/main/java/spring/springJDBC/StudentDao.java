@@ -94,7 +94,7 @@ public class StudentDao {
 		HashMap<String,Integer> map = new HashMap<>();
 		map.put("name",id);
 		map.put("nam",id);
-		String name = namedTemplate.queryForObject("select name from student where id=:nam", map, String.class);
+		String name = namedTemplate.queryForObject("select name from student where id=:name", map, String.class);
 		return name;
 	}
 	

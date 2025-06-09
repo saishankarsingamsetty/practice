@@ -2,7 +2,7 @@ package customcollections;
 
 public class CustomArrayListTest {
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("all")
 	public static void main(String[] args) {
 		CustomArrayList list = new CustomArrayList();
 //		list.addElement(123);
@@ -40,6 +40,7 @@ public class CustomArrayListTest {
 //		System.out.println(list);
 //		
 //		System.out.println(list.size());
+		
 		
 		System.out.println(list);
 		list.removeAtIndex(4);
