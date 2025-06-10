@@ -40,7 +40,7 @@ public class SecurityConfigurationUsingJDBC extends WebSecurityConfigurerAdapter
 //		 .anyRequest().authenticated()
 		 .and().formLogin()
 		 .and().logout()
-		 .and().exceptionHandling().accessDeniedPage("/accessdenied")
-		 ;
+		 .and().exceptionHandling().accessDeniedPage("/accessdenied");
 	}
+	
 }
