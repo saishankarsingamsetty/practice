@@ -32,11 +32,15 @@ public class SecurityConfigurationUsingJDBC extends WebSecurityConfigurerAdapter
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		 http.authorizeRequests()
+		 http.csrf().disable()
+		 .authorizeRequests()
 		 .antMatchers("/").permitAll()
 		 .antMatchers("/user").hasAnyAuthority("user","admin")
 		 .antMatchers("/admin").hasAuthority("admin")
+//		 .anyRequest().authenticated()
 		 .and().formLogin()
-		 .and().exceptionHandling().accessDeniedPage("/accessdenied");
+		 .and().logout()
+		 .and().exceptionHandling().accessDeniedPage("/accessdenied")
+		 ;
 	}
 }

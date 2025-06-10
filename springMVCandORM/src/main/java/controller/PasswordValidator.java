@@ -20,7 +20,7 @@ public class PasswordValidator {
 		return "passwordform";
 	}
 	
-	@PostMapping("/validatePassword")
+	@RequestMapping("/validatePassword")
 	@ResponseBody
 	public Map<String, Boolean> validatePassword(@RequestBody Map<String, String> request) {
 //		System.out.println("hello");

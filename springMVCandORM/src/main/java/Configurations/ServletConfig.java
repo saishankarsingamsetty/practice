@@ -10,6 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @ComponentScan(basePackages = {"Configurations","controller" ,"services" ,"dao" ,"model"})
+//@Import(value = {OrmConfig.class})
 @Import(value = {OrmConfig.class,SecurityConfig.class,SecurityConfigurationUsingJDBC.class})
 @EnableWebMvc
 public class ServletConfig {
