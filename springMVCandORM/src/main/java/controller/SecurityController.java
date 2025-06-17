@@ -25,4 +25,9 @@ public class SecurityController {
 	public String accessDenied() {
 		return "accessdenied";
 	}
+	@RequestMapping("/login")
+	public String login() {
+		System.out.println("hjel");
+		return "login";
+	}
 }

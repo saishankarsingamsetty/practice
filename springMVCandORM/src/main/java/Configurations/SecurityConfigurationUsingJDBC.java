@@ -38,7 +38,7 @@ public class SecurityConfigurationUsingJDBC extends WebSecurityConfigurerAdapter
 		 .antMatchers("/user").hasAnyAuthority("user","admin")
 		 .antMatchers("/admin").hasAuthority("admin")
 //		 .anyRequest().authenticated()
-		 .and().formLogin()
+		 .and().formLogin().loginPage("/login")
 		 .and().logout()
 		 .and().exceptionHandling().accessDeniedPage("/accessdenied");
 	}
