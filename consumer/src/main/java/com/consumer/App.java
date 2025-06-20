@@ -17,8 +17,11 @@ public class App {
 //       example.printPet();
 //       example.pathVariableExample();
 //       example.usingPostMappingRegisteringPet();
+       
        example.gettingListOfPetObjects();
        //hello
        //hello
+       
+       context.close();
     }
 }
