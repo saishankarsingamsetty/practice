@@ -1,5 +1,8 @@
 package com.models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +23,7 @@ public class Pet {
 	Integer id;
 	
 	@Column(length = 20)
+	@JsonProperty("petname")
 	String name;
 	
 	Integer age;

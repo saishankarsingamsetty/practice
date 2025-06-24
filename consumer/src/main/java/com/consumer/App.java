@@ -14,11 +14,11 @@ public class App {
        Example example = context.getBean(Example.class);
        example.restExample();
        
-//       example.printPet();
+       example.printPet();
 //       example.pathVariableExample();
 //       example.usingPostMappingRegisteringPet();
        
-       example.gettingListOfPetObjects();
+//       example.gettingListOfPetObjects();
        //hello
        //hello
        
