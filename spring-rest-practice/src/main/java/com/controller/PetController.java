@@ -44,8 +44,10 @@ public class PetController {
 	@GetMapping("/report/{id}")
 	public ResponseEntity<?> report(@PathVariable Integer id){
 		Pet pet = petService.getPetById(id);
-		if(null != pet)
-		return new ResponseEntity<Pet> (pet,HttpStatus.OK);
+		if(null != pet) {
+			
+			return new ResponseEntity<Pet> (pet,HttpStatus.OK);
+		}
 		
 		return new ResponseEntity<String> ("no user found with the id "+id,HttpStatus.OK);
 	}
