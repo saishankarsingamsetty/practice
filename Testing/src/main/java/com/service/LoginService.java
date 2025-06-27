@@ -21,6 +21,6 @@ public class LoginService {
 //		else {
 //			return true;
 //		}
-		return 0 == count;
+		return 0 != count;
 	}
 }

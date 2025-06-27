@@ -12,6 +12,7 @@ import org.mockito.Mockito;
 class LoginServiceTest {
 
 	static LoginService ls;
+	
 	static LoginDAO mockDAO;
 
 	@BeforeAll
