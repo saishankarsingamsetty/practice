@@ -27,7 +27,7 @@ class LoginServiceTest {
 		assertTrue(ls.login("hello", "123"));
 	}
 	
-	
+		
 	@Test
 	void testingWithInValidCredintials() {
 		Mockito.when(mockDAO.authenticate("hello", "123")).thenReturn(1);
