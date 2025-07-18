@@ -8,6 +8,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -90,6 +91,7 @@ public class Example {
 	
 	
 	//getting the list of json objects
+	
 	
 	public void gettingListOfPetObjects() throws JsonMappingException, JsonProcessingException {
 		String url = "http://localhost:3031/pet-api/report";
