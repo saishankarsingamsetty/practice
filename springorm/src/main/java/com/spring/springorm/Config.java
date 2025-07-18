@@ -23,7 +23,7 @@ public class Config {
     @Bean
     public DataSource ds() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
-        ds.setDriverClassName("oracle.jdbc.driver.OracleDriver"); // Don't forget this
+        ds.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         ds.setUrl("jdbc:oracle:thin:@localhost:1521/orclpdb");
         ds.setUsername("hr");
         ds.setPassword("hr");
